@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSnap Pro - Convert Code to Beautiful Images</title>
+    <meta name="description" content="Transform your code snippets into beautiful, shareable images with custom themes, gradients, and styling options.">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --bg-tertiary: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --text-muted: #6b7280;
+            --border: #2a2a2a;
+            --border-hover: #3a3a3a;
+            --success: #22c55e;
+            --warning: #eab308;
+            --error: #ef4444;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        .header {
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .title-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo ion-icon {
+            color: white;
+            font-size: 20px;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            align-items: end;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .control-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .control-label ion-icon {
+            font-size: 16px;
+        }
+
+        .select-wrapper, .input-wrapper {
+            position: relative;
+        }
+
+        .custom-select, .file-input {
+            appearance: none;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 12px 40px 12px 16px;
+            width: 100%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .file-input {
+            cursor: text;
+        }
+
+        .custom-select:hover, .file-input:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-tertiary);
+        }
+
+        .custom-select:focus, .file-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .select-arrow {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* Style for select options */
+        .custom-select option {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-radius: var(--radius-sm);
+            padding: 8px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .settings-btn, .download-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            white-space: nowrap;
+        }
+
+        .settings-btn {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .settings-btn:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--border-hover);
+        }
+
+        .download-btn {
+            background: var(--primary);
+            color: var(--text-primary);
+        }
+
+        .download-btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .code-preview-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .preview-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .preview-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .preview-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .preview-btn:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .code-preview {
+            background: linear-gradient(135deg, #fecaca 0%, #ddd6fe 100%);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .terminal-window {
+            background: #2d3748;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .terminal-header {
+            background: #4a5568;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .terminal-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot.red { background: var(--error); }
+        .dot.yellow { background: var(--warning); }
+        .dot.green { background: var(--success); }
+
+        .terminal-title {
+            font-size: 13px;
+            color: #cbd5e0;
+            font-weight: 500;
+        }
+
+        .code-area {
+            background: #2d3748;
+            color: #e2e8f0;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 24px;
+            min-height: 300px;
+            border: none;
+            outline: none;
+            resize: vertical;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .code-area::placeholder {
+            color: #718096;
+            font-style: italic;
+        }
+
+        /* Enhanced code text colors */
+        .code-area {
+            color: #e2e8f0;
+        }
+
+        .code-area .keyword {
+            color: #ff79c6;
+            font-weight: 600;
+        }
+
+        .code-area .string {
+            color: #f1fa8c;
+        }
+
+        .code-area .function {
+            color: #50fa7b;
+        }
+
+        .code-area .comment {
+            color: #6272a4;
+            font-style: italic;
+        }
+
+        .code-area .number {
+            color: #bd93f9;
+        }
+
+        .code-area .operator {
+            color: #ff79c6;
+        }
+
+        .code-area .variable {
+            color: #8be9fd;
+        }
+
+        /* Gradient Themes */
+        .gradient-spring { background: linear-gradient(135deg, #fecaca 0%, #ddd6fe 100%); }
+        .gradient-ocean { background: linear-gradient(135deg, #bfdbfe 0%, #a7f3d0 100%); }
+        .gradient-sunset { background: linear-gradient(135deg, #fed7aa 0%, #fda4af 100%); }
+        .gradient-forest { background: linear-gradient(135deg, #bbf7d0 0%, #d9f99d 100%); }
+        .gradient-royal { background: linear-gradient(135deg, #c7d2fe 0%, #ddd6fe 100%); }
+        .gradient-fire { background: linear-gradient(135deg, #fecaca 0%, #fed7aa 100%); }
+        .gradient-midnight { background: linear-gradient(135deg, #1e3a8a 0%, #7e22ce 100%); }
+        .gradient-aurora { background: linear-gradient(135deg, #34d399 0%, #3b82f6 100%); }
+
+        /* Code Themes */
+        .theme-dark { background: #1a1a1a; color: #e5e7eb; }
+        .theme-light { background: #ffffff; color: #1f2937; }
+        .theme-monokai { background: #272822; color: #f8f8f2; }
+        .theme-github { background: #f6f8fa; color: #24292e; }
+        .theme-dracula { background: #282a36; color: #f8f8f2; }
+        .theme-vscode { background: #1e1e1e; color: #d4d4d4; }
+        .theme-solarized { background: #002b36; color: #839496; }
+        .theme-nord { background: #2e3440; color: #d8dee9; }
+
+        /* Font Families */
+        .font-jetbrains { font-family: 'JetBrains Mono', monospace; }
+        .font-courier { font-family: 'Courier New', monospace; }
+        .font-consolas { font-family: 'Consolas', monospace; }
+        .font-menlo { font-family: 'Menlo', monospace; }
+        .font-fira { font-family: 'Fira Code', monospace; }
+
+        /* Modal Styles */
+        .settings-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 24px;
+            padding: 4px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .modal-section {
+            margin-bottom: 28px;
+        }
+
+        .modal-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modal-section h3 ion-icon {
+            color: var(--primary);
+        }
+
+        .slider-group {
+            margin-bottom: 20px;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: var(--bg-tertiary);
+            outline: none;
+            appearance: none;
+            transition: var(--transition);
+        }
+
+        .slider:hover {
+            background: var(--border);
+        }
+
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-group {
+            display: flex;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .toggle-checkbox {
+            appearance: none;
+            width: 44px;
+            height: 24px;
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .toggle-checkbox:checked {
+            background: var(--primary);
+        }
+
+        .toggle-checkbox::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            top: 2px;
+            left: 2px;
+            transition: var(--transition);
+        }
+
+        .toggle-checkbox:checked::before {
+            left: 22px;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow-lg);
+            z-index: 1001;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .toast.success .toast-icon {
+            background: var(--success);
+        }
+
+        .toast.error .toast-icon {
+            background: var(--error);
+        }
+
+        .toast-message {
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .controls {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 16px 20px;
+            }
+            
+            .controls {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .action-buttons {
+                grid-column: 1;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .code-preview {
+                padding: 16px;
+            }
+            
+            .code-area {
+                font-size: 14px;
+                padding: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .title {
+                font-size: 24px;
+            }
+            
+            .modal-content {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title-container">
+            <div class="logo">
+                <ion-icon name="code-slash-outline"></ion-icon>
+            </div>
+            <div>
+                <h1 class="title">CodeSnap Pro</h1>
+                <p class="subtitle">Transform code into beautiful, shareable images</p>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label class="control-label">
+                    <ion-icon name="code-outline"></ion-icon>
+                    Language
+                </label>
+                <div class="select-wrapper">
+                    <select class="custom-select" id="languageSelect">
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="typescript">TypeScript</option>
+                        <option value="java">Java</option>
+                        <option value="cpp">C++</option>
+                        <option value="csharp">C#</option>
+                        <option value="php">PHP</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="go">Go</option>
+                        <option value="rust">Rust</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="sql">SQL</option>
+                        <option value="json">JSON</option>
+                    </select>
+                    <ion-icon name="chevron-down-outline" class="select-arrow"></ion-icon>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">
+                    <ion-icon name="moon-outline"></ion-icon>
+                    Theme
+                </label>
+                <div class="select-wrapper">
+                    <select class="custom-select" id="themeSelect">
+                        <option value="dracula">Dracula</option>
+                        <option value="vscode">VS Code Dark</option>
+                        <option value="monokai">Monokai</option>
+                        <option value="solarized">Solarized Dark</option>
+                        <option value="nord">Nord</option>
+                        <option value="github">GitHub Light</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                    <ion-icon name="chevron-down-outline" class="select-arrow"></ion-icon>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">
+                    <ion-icon name="color-palette-outline"></ion-icon>
+                    Background
+                </label>
+                <div class="select-wrapper">
+                    <select class="custom-select" id="gradientSelect">
+                        <option value="spring">Spring Warmth</option>
+                        <option value="ocean">Ocean Breeze</option>
+                        <option value="sunset">Sunset Glow</option>
+                        <option value="forest">Forest Fresh</option>
+                        <option value="royal">Royal Purple</option>
+                        <option value="fire">Fire Ember</option>
+                        <option value="midnight">Midnight Sky</option>
+                        <option value="aurora">Aurora Borealis</option>
+                    </select>
+                    <ion-icon name="chevron-down-outline" class="select-arrow"></ion-icon>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                    File Name
+                </label>
+                <div class="input-wrapper">
+                    <input type="text" class="file-input" placeholder="code-snippet.png" id="fileName">
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="settings-btn" id="settingsBtn">
+                    <ion-icon name="settings-outline"></ion-icon>
+                    Settings
+                </button>
+
+                <button class="download-btn" id="downloadBtn">
+                    <ion-icon name="arrow-down"></ion-icon>
+                    Download
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="code-preview-container">
+            <div class="preview-header">
+                <h2 class="preview-title">Preview</h2>
+                <div class="preview-actions">
+                    <button class="preview-btn" id="copyCodeBtn">
+                        <ion-icon name="copy-outline"></ion-icon>
+                        Copy Code
+                    </button>
+                    <button class="preview-btn" id="clearCodeBtn">
+                        <ion-icon name="trash-outline"></ion-icon>
+                        Clear
+                    </button>
+                </div>
+            </div>
+            <div class="code-preview gradient-spring" id="codePreview">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <div class="terminal-dots">
+                                <div class="dot red"></div>
+                                <div class="dot yellow"></div>
+                                <div class="dot green"></div>
+                            </div>
+                            <div class="terminal-title" id="terminalTitle">python</div>
+                        </div>
+                    </div>
+                    <textarea 
+                        class="code-area theme-dracula font-jetbrains" 
+                        id="codeArea" 
+                        placeholder="// Paste your code here..."
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="settings-modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Settings</h2>
+                <button class="close-btn" id="closeModal">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </div>
+
+            <div class="modal-section">
+                <h3>
+                    <ion-icon name="text-outline"></ion-icon>
+                    Font Settings
+                </h3>
+                <div class="control-group">
+                    <label class="control-label">Font Family</label>
+                    <div class="select-wrapper">
+                        <select class="custom-select" id="fontSelect">
+                            <option value="jetbrains">JetBrains Mono</option>
+                            <option value="courier">Courier New</option>
+                            <option value="consolas">Consolas</option>
+                            <option value="menlo">Menlo</option>
+                            <option value="fira">Fira Code</option>
+                        </select>
+                        <ion-icon name="chevron-down-outline" class="select-arrow"></ion-icon>
+                    </div>
+                </div>
+                
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>Font Size</span>
+                        <span id="fontSizeValue">16px</span>
+                    </div>
+                    <input type="range" class="slider" id="fontSizeSlider" min="12" max="24" value="16">
+                </div>
+                
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>Line Height</span>
+                        <span id="lineHeightValue">1.6</span>
+                    </div>
+                    <input type="range" class="slider" id="lineHeightSlider" min="1.2" max="2.0" step="0.1" value="1.6">
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>
+                    <ion-icon name="grid-outline"></ion-icon>
+                    Layout
+                </h3>
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>Padding</span>
+                        <span id="paddingValue">24px</span>
+                    </div>
+                    <input type="range" class="slider" id="paddingSlider" min="16" max="48" value="24">
+                </div>
+                
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>Border Radius</span>
+                        <span id="radiusValue">12px</span>
+                    </div>
+                    <input type="range" class="slider" id="radiusSlider" min="0" max="24" value="12">
+                </div>
+                
+                <div class="toggle-group">
+                    <label class="toggle-label">
+                        <input type="checkbox" class="toggle-checkbox" id="showLineNumbers">
+                        Show line numbers
+                    </label>
+                    <label class="toggle-label">
+                        <input type="checkbox" class="toggle-checkbox" id="showWindowControls" checked>
+                        Show window controls
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">
+            <ion-icon name="checkmark"></ion-icon>
+        </div>
+        <div class="toast-message" id="toastMessage">Image downloaded successfully!</div>
+    </div>
+
+    <script>
+        // DOM elements
+        const languageSelect = document.getElementById('languageSelect');
+        const themeSelect = document.getElementById('themeSelect');
+        const gradientSelect = document.getElementById('gradientSelect');
+        const fontSelect = document.getElementById('fontSelect');
+        const codeArea = document.getElementById('codeArea');
+        const codePreview = document.getElementById('codePreview');
+        const terminalTitle = document.getElementById('terminalTitle');
+        const settingsBtn = document.getElementById('settingsBtn');
+        const settingsModal = document.getElementById('settingsModal');
+        const closeModal = document.getElementById('closeModal');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const fileName = document.getElementById('fileName');
+        const copyCodeBtn = document.getElementById('copyCodeBtn');
+        const clearCodeBtn = document.getElementById('clearCodeBtn');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+
+        // Settings sliders
+        const fontSizeSlider = document.getElementById('fontSizeSlider');
+        const fontSizeValue = document.getElementById('fontSizeValue');
+        const lineHeightSlider = document.getElementById('lineHeightSlider');
+        const lineHeightValue = document.getElementById('lineHeightValue');
+        const paddingSlider = document.getElementById('paddingSlider');
+        const paddingValue = document.getElementById('paddingValue');
+        const radiusSlider = document.getElementById('radiusSlider');
+        const radiusValue = document.getElementById('radiusValue');
+        const showLineNumbers = document.getElementById('showLineNumbers');
+        const showWindowControls = document.getElementById('showWindowControls');
+
+        // Event listeners
+        languageSelect.addEventListener('change', updateLanguage);
+        themeSelect.addEventListener('change', updateTheme);
+        gradientSelect.addEventListener('change', updateGradient);
+        fontSelect.addEventListener('change', updateFont);
+        settingsBtn.addEventListener('click', () => settingsModal.style.display = 'flex');
+        closeModal.addEventListener('click', () => settingsModal.style.display = 'none');
+        downloadBtn.addEventListener('click', downloadImage);
+        copyCodeBtn.addEventListener('click', copyCode);
+        clearCodeBtn.addEventListener('click', clearCode);
+
+        // Slider event listeners
+        fontSizeSlider.addEventListener('input', updateFontSize);
+        lineHeightSlider.addEventListener('input', updateLineHeight);
+        paddingSlider.addEventListener('input', updatePadding);
+        radiusSlider.addEventListener('input', updateRadius);
+        showLineNumbers.addEventListener('change', toggleLineNumbers);
+        showWindowControls.addEventListener('change', toggleWindowControls);
+
+        // Close modal when clicking outside
+        settingsModal.addEventListener('click', (e) => {
+            if (e.target === settingsModal) {
+                settingsModal.style.display = 'none';
+            }
+        });
+
+        // Functions
+        function updateLanguage() {
+            const language = languageSelect.value;
+            terminalTitle.textContent = language;
+        }
+
+        function updateTheme() {
+            const theme = themeSelect.value;
+            codeArea.className = codeArea.className.replace(/theme-\w+/, `theme-${theme}`);
+        }
+
+        function updateGradient() {
+            const gradient = gradientSelect.value;
+            codePreview.className = codePreview.className.replace(/gradient-\w+/, `gradient-${gradient}`);
+        }
+
+        function updateFont() {
+            const font = fontSelect.value;
+            codeArea.className = codeArea.className.replace(/font-\w+/, `font-${font}`);
+        }
+
+        function updateFontSize() {
+            const size = fontSizeSlider.value;
+            fontSizeValue.textContent = `${size}px`;
+            codeArea.style.fontSize = `${size}px`;
+        }
+
+        function updateLineHeight() {
+            const height = lineHeightSlider.value;
+            lineHeightValue.textContent = height;
+            codeArea.style.lineHeight = height;
+        }
+
+        function updatePadding() {
+            const padding = paddingSlider.value;
+            paddingValue.textContent = `${padding}px`;
+            codePreview.style.padding = `${padding}px`;
+        }
+
+        function updateRadius() {
+            const radius = radiusSlider.value;
+            radiusValue.textContent = `${radius}px`;
+            codePreview.querySelector('.terminal-window').style.borderRadius = `${radius}px`;
+        }
+
+        function toggleLineNumbers() {
+            // This would be implemented with a code highlighting library
+            showToast('Line numbers feature would be implemented with a code highlighting library');
+        }
+
+        function toggleWindowControls() {
+            const terminalHeader = document.querySelector('.terminal-header');
+            if (showWindowControls.checked) {
+                terminalHeader.style.display = 'flex';
+            } else {
+                terminalHeader.style.display = 'none';
+            }
+        }
+
+        function copyCode() {
+            codeArea.select();
+            document.execCommand('copy');
+            showToast('Code copied to clipboard!');
+        }
+
+        function clearCode() {
+            codeArea.value = '';
+            codeArea.focus();
+        }
+
+        function showToast(message, type = 'success') {
+            toastMessage.textContent = message;
+            toast.className = `toast ${type}`;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        async function downloadImage() {
+            try {
+                // Import html2canvas from CDN
+                if (!window.html2canvas) {
+                    const script = document.createElement('script');
+                    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+                    script.onload = () => downloadImage();
+                    document.head.appendChild(script);
+                    return;
+                }
+
+                const canvas = await html2canvas(codePreview, {
+                    backgroundColor: null,
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true
+                });
+
+                const link = document.createElement('a');
+                const filename = fileName.value || 'code-snippet.png';
+                link.download = filename;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+                showToast(`Image "${filename}" downloaded successfully!`);
+            } catch (error) {
+                console.error('Error generating image:', error);
+                showToast('Error generating image. Please try again.', 'error');
+            }
+        }
+
+        // Initialize
+        updateLanguage();
+        updateGradient();
+        updateTheme();
+        updateFont();
+    </script>
+</body>
+</html>

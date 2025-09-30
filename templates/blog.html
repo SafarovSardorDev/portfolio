@@ -1,0 +1,66 @@
+<!-- blog.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Blog - {{ profile.name }}{% endblock %}
+
+{% block content %}
+<article class="blog active" data-page="blog">
+    <header>
+        <h2 class="h2 article-title">Blog</h2>
+    </header>
+
+    <section class="blog-posts">
+        <ul class="blog-posts-list">
+            {% for post in blog_posts %}
+            <li class="blog-post-item">
+                <a href="{% url 'blog_detail' post.slug %}">  <!-- Slug orqali link -->
+                    <figure class="blog-banner-box">
+                        {% if post.image %}
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}" loading="lazy">
+                        {% elif post.image_url %}
+                            <img src="{{ post.image_url }}" alt="{{ post.title }}" loading="lazy">
+                        {% else %}
+                            <img src="https://via.placeholder.com/400x250/1a1a1a/666666?text=Blog+Image" alt="{{ post.title }}" loading="lazy">
+                        {% endif %}
+                    </figure>
+
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <p class="blog-category">{{ post.category }}</p>
+                            <span class="dot"></span>
+                            <time datetime="{{ post.published_date|date:'Y-m-d' }}">{{ post.published_date|date:'M j, Y' }}</time>
+                        </div>
+
+                        <h3 class="h3 blog-item-title">{{ post.title }}</h3>
+                    </div>
+                </a>
+            </li>
+            {% empty %}
+            <li class="empty-state">
+                <p>Hozircha hech qanday blog post mavjud emas.</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</article>
+
+<style>
+.blog-text {
+    color: var(--light-gray);
+    font-size: var(--fs7);
+    line-height: 1.6;
+    margin-top: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--light-gray70);
+}
+</style>
+{% endblock %}

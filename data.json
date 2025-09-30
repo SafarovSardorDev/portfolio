@@ -1,0 +1,2013 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "main",
+    "model": "blogpost"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "main",
+    "model": "client"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "main",
+    "model": "education"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "main",
+    "model": "experience"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "main",
+    "model": "profile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "main",
+    "model": "project"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "main",
+    "model": "service"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "main",
+    "model": "skill"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "main",
+    "model": "testimonial"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "main",
+    "model": "sociallink"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2caldjtoeauj19grxj0rpa642hhdcwn3",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEMlYcu3fcbyMwAUjWQlHZl_HfbpAvdnnPufYuA61LC2tMcpiiuAsTplxHyM9VdxAfWe5Pc6jJPJPdEHrbLscX0uh3t30HBXrZ1jmCj84iaBpsskDtDNtaTRmQ2irNy5NQGnUnaM1xYAQ6UkQg1k_h8AfeZOM0:1uqD3I:bexZxPhRagb3pRSSGOE5xI8OEFD_QCvkQGbAKscADi4",
+    "expire_date": "2025-09-07T15:54:40.113Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "le8r98bnzb61z700kjiqypycaa3ewkpa",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEMlYcu3fcbyMwAUjWQlHZl_HfbpAvdnnPufYuA61LC2tMcpiiuAsTplxHyM9VdxAfWe5Pc6jJPJPdEHrbLscX0uh3t30HBXrZ1jmCj84iaBpsskDtDNtaTRmQ2irNy5NQGnUnaM1xYAQ6UkQg1k_h8AfeZOM0:1uvrzp:f12yh9SQhKpa3IoUSFyc2uWa7dgWcdQph9K4WYHd6xw",
+    "expire_date": "2025-09-23T06:38:29.575Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "waoaev8l25u5fskg8hwqqsgzpurij1vi",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEMlYcu3fcbyMwAUjWQlHZl_HfbpAvdnnPufYuA61LC2tMcpiiuAsTplxHyM9VdxAfWe5Pc6jJPJPdEHrbLscX0uh3t30HBXrZ1jmCj84iaBpsskDtDNtaTRmQ2irNy5NQGnUnaM1xYAQ6UkQg1k_h8AfeZOM0:1v2scm:tVeubuYz2NSw2zGrzWPCmKBjVhtRADU3lpPkF18Yrzw",
+    "expire_date": "2025-10-12T14:43:40.977Z"
+  }
+},
+{
+  "model": "main.profile",
+  "pk": 2,
+  "fields": {
+    "name": "Sardor Safarov",
+    "title": "Software Engineer",
+    "avatar": "avatars/photo_2025-09-09_11-39-43_rE1aNsy.jpg",
+    "email": "sardor.safarov200320@gmail.com",
+    "phone": "937377880",
+    "birthday": "2023-01-25",
+    "location": "Tashkent, Uzbekistan",
+    "about_me": "Hi, I'm here",
+    "created_at": "2025-09-17T04:25:48.837Z",
+    "updated_at": "2025-09-17T04:36:21.342Z"
+  }
+},
+{
+  "model": "main.sociallink",
+  "pk": 3,
+  "fields": {
+    "profile": 2,
+    "name": "instagram",
+    "url": "https://t.me/imsafarov",
+    "icon_class": "logo-instagram"
+  }
+},
+{
+  "model": "main.sociallink",
+  "pk": 4,
+  "fields": {
+    "profile": 2,
+    "name": "linkedin",
+    "url": "https://instagram.com/iamsardordev",
+    "icon_class": "logo-linkedin"
+  }
+},
+{
+  "model": "main.sociallink",
+  "pk": 5,
+  "fields": {
+    "profile": 2,
+    "name": "send",
+    "url": "https://t.me/imsafarov",
+    "icon_class": "send"
+  }
+},
+{
+  "model": "main.sociallink",
+  "pk": 6,
+  "fields": {
+    "profile": 2,
+    "name": "Github",
+    "url": "https://github.com/SafarovSardorDev",
+    "icon_class": "logo-github"
+  }
+},
+{
+  "model": "main.service",
+  "pk": 1,
+  "fields": {
+    "title": "Vebsaytlar",
+    "description": "Tez va yuqori sifatli vebsaytlarni professional darajada yetkazib beraman.",
+    "icon": "",
+    "icon_url": "https://i.postimg.cc/ZqgqrqzG/icon-dev.png"
+  }
+},
+{
+  "model": "main.service",
+  "pk": 2,
+  "fields": {
+    "title": "Telegram botlar",
+    "description": "Har qanday osondan murakkabgacha bo'lgan barcha turdagi telegram botlarni dasturlab beraman.",
+    "icon": "",
+    "icon_url": "https://i.postimg.cc/xjLdzYxZ/icon-app.png"
+  }
+},
+{
+  "model": "main.testimonial",
+  "pk": 1,
+  "fields": {
+    "client_name": "Aziz Nigmatov",
+    "client_position": "CEO of AutoNomous",
+    "avatar": "",
+    "avatar_url": "https://i.postimg.cc/zXv1Xv81/avatar-4.png",
+    "content": "I was overwhelmed with the thought of redesigning my online store, but Richard made the process seamless. The site is not only visually appealing but also optimized for conversions. I've seen a 50% increase in traffic since the launch!",
+    "date": "2025-08-25",
+    "is_active": true
+  }
+},
+{
+  "model": "main.testimonial",
+  "pk": 2,
+  "fields": {
+    "client_name": "Jonibek Yorqulov",
+    "client_position": "Odoo Expert",
+    "avatar": "",
+    "avatar_url": "https://i.postimg.cc/zGDHfn3G/avatar-1.png",
+    "content": "Richard was hired to create a corporate identity. It's modern, clean and with a beautiful design that got a lot of praises from colleagues and visitors. We were very pleased with the work done. He has a lot of experience and is very concerned about the needs of client.",
+    "date": "2025-08-20",
+    "is_active": true
+  }
+},
+{
+  "model": "main.testimonial",
+  "pk": 3,
+  "fields": {
+    "client_name": "Gulbahor To'xtaboyeva",
+    "client_position": "HR at Energetic Department",
+    "avatar": "",
+    "avatar_url": "https://i.postimg.cc/DwY0yHtx/avatar-2.png",
+    "content": "Working with Richard has been an absolute pleasure. I was impressed with his attention to detail, his web design skills and his professional approach to our timelines and processes.",
+    "date": "2025-07-25",
+    "is_active": true
+  }
+},
+{
+  "model": "main.client",
+  "pk": 1,
+  "fields": {
+    "name": "Sardor",
+    "logo": "",
+    "logo_url": "https://i.postimg.cc/YqfKyG66/logo-1-color.png",
+    "website": "https://t.me/imsafarov"
+  }
+},
+{
+  "model": "main.client",
+  "pk": 2,
+  "fields": {
+    "name": "Sardor 1",
+    "logo": "",
+    "logo_url": "https://i.postimg.cc/fWm6JtgG/logo-2-color.png",
+    "website": "https://t.me/python_core_oop"
+  }
+},
+{
+  "model": "main.education",
+  "pk": 1,
+  "fields": {
+    "institution": "University school of the arts",
+    "degree": "4",
+    "period": "2008 - 2010",
+    "description": "There I learnt a wide range of topics that are essential to understanding both the theory and practical aspects of computing. This involves programming fundamentals, computer architecture, operating systems, databases, software engineering, problem solving, collaboration and communication soft skills.",
+    "order": 2
+  }
+},
+{
+  "model": "main.education",
+  "pk": 2,
+  "fields": {
+    "institution": "New York Academy of Art",
+    "degree": "11",
+    "period": "2006 - 2007",
+    "description": "I chose my master degree in technology. There I deepened my knowledge, enhanced my skills in the area and learnt how to increase my career prospects in a competitive job market.",
+    "order": 1
+  }
+},
+{
+  "model": "main.experience",
+  "pk": 1,
+  "fields": {
+    "position": "Creative director",
+    "company": "EPAM",
+    "period": "2008 - 2010",
+    "description": "I create logos, color schemes and typography for a brand's identity. Also I develop graphics for websites, social media and digital ads with applications that enhance user experience.",
+    "order": 1
+  }
+},
+{
+  "model": "main.experience",
+  "pk": 2,
+  "fields": {
+    "position": "Art director",
+    "company": "ICT Academy",
+    "period": "2006 - 2007",
+    "description": "I create and develop visual concepts that align with the project's goals and objectives, supervising the design process and managing timelines and budgets for design projects.",
+    "order": 2
+  }
+},
+{
+  "model": "main.skill",
+  "pk": 1,
+  "fields": {
+    "name": "Python",
+    "percentage": 90,
+    "category": "general",
+    "order": 1
+  }
+},
+{
+  "model": "main.skill",
+  "pk": 2,
+  "fields": {
+    "name": "Django",
+    "percentage": 80,
+    "category": "general",
+    "order": 2
+  }
+},
+{
+  "model": "main.project",
+  "pk": 1,
+  "fields": {
+    "title": "News Website",
+    "category": "web-development",
+    "image": "projects/diyor.jpg",
+    "image_url": null,
+    "description": "Yangiliklar sayti",
+    "project_url": "https://t.me/imsafarov",
+    "is_active": true,
+    "order": 1
+  }
+},
+{
+  "model": "main.project",
+  "pk": 2,
+  "fields": {
+    "title": "QUEASY",
+    "category": "applications",
+    "image": "projects/CPKinoYTBanner_3.jpg",
+    "image_url": null,
+    "description": "Backend",
+    "project_url": "https://t.me/imsafarov",
+    "is_active": true,
+    "order": 2
+  }
+},
+{
+  "model": "main.blogpost",
+  "pk": 1,
+  "fields": {
+    "title": "Demak Re'ja Bunday.",
+    "slug": "demak-reja-bunday",
+    "category": "general",
+    "image": "blog/ticket-664153364.png",
+    "image_url": null,
+    "content": "Keyingi 12 soat ichida https://tirikchilik.uz/azim sahifasida donatlar qabul qilamiz. (Tushgan barcha pulni + o'zimdan yana shuncha qo'shib) keyin uni Google orqali https://www.palestinercs.org/en ga donate qilamiz.\r\n\r\nDemak 100 so'm yuborsangiz, men o'zimdan 100 qo'shib Google'ga, Google unga 200 so'm qo'shib Benevityga, Benevity esa 400 so'mni palestinercs.org tashkilotiga yuboradi va bu tashkilot Falastinga yordam sifatida tibbiy yordam va oziq-ovqat yuboradi, InshaAlloh.",
+    "excerpt": "Nimadir",
+    "published_date": "2025-09-28",
+    "is_published": true
+  }
+},
+{
+  "model": "main.blogpost",
+  "pk": 2,
+  "fields": {
+    "title": "Avtomatlashtiring",
+    "slug": "avtomatlashtiring",
+    "category": "general",
+    "image": "blog/Copilot_20250722_161856_8hRjAar.png",
+    "image_url": null,
+    "content": "Hech qachon qo'lda 6 daqiqa qilish mumkin bo'lgan ishni qo'lda qilmang.\r\n\r\nO'rniga 5 soat sarflab, uni avtomatlashtirish uchun kod yozing.",
+    "excerpt": "Hech qachon qo'lda 6 daqiqa qilish mumkin bo'lgan ishni qo'lda qilmang.",
+    "published_date": "2025-09-28",
+    "is_published": true
+  }
+},
+{
+  "model": "main.blogpost",
+  "pk": 3,
+  "fields": {
+    "title": "Tilimiz Qadriyatlarimizni Ko'rastadi",
+    "slug": "tilimiz-qadriyatlarimizni-korastadi",
+    "category": "Test category",
+    "image": "blog/Flux_Dev_Cinematic_2D_movie_reel_logo_ultrarealistic_white_FFF_1.jpg",
+    "image_url": null,
+    "content": "So'zlarimizni og'irligi bor - ularni kimdirni tasvirlashda ishlatsak ularni maqtayotgan yoki kamsitayotgandek tuyuladi, yetmaganiga bu so'zlar ruscha.\r\n\r\nMasalan, kimdir navbatni buzib o'tib, ishini tezda hal qilsa uni - shustri (epchil - ijobiy) deymiz. Yoki kimdir kamroq pul sarflasa uni jmot (qurumsoq - salbiy) deymiz. Tejamkor degan so'zimiz bo'lsada, uni hech qachon eshitmaysiz - eslab ko'ring qachon kim uchun ishlatdingiz.\r\n\r\nBolalikdan bizni tasvirlashda ishlatalidigan so'zlar bizni hayot davomida kim bo'lishimizni belgilaydi. Oddiy shunaqa so'zlarimiz tufayli ko'p katta xarajatlari bilan maqtanadigan maqtanchoqlar, mansabidan foydalanayotgan o'g'ri-shustrilar chiqadi. Moliyaviy savodxonlik, odamiylik dam oladi.\r\n\r\nKo'proq tillar o'rganing.",
+    "excerpt": "Britaniyada juda ko'p yomg'ir yog'adi. Natijada ingliz tilida \"yomg'ir yog'ayapti\" deb 107 xil usulda aytishingiz mumkin.",
+    "published_date": "2025-09-28",
+    "is_published": true
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add blog post",
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "codename": "add_blogpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change blog post",
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "codename": "change_blogpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete blog post",
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "codename": "delete_blogpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view blog post",
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "codename": "view_blogpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add client",
+    "content_type": [
+      "main",
+      "client"
+    ],
+    "codename": "add_client"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change client",
+    "content_type": [
+      "main",
+      "client"
+    ],
+    "codename": "change_client"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete client",
+    "content_type": [
+      "main",
+      "client"
+    ],
+    "codename": "delete_client"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view client",
+    "content_type": [
+      "main",
+      "client"
+    ],
+    "codename": "view_client"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add education",
+    "content_type": [
+      "main",
+      "education"
+    ],
+    "codename": "add_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change education",
+    "content_type": [
+      "main",
+      "education"
+    ],
+    "codename": "change_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete education",
+    "content_type": [
+      "main",
+      "education"
+    ],
+    "codename": "delete_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view education",
+    "content_type": [
+      "main",
+      "education"
+    ],
+    "codename": "view_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add experience",
+    "content_type": [
+      "main",
+      "experience"
+    ],
+    "codename": "add_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change experience",
+    "content_type": [
+      "main",
+      "experience"
+    ],
+    "codename": "change_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete experience",
+    "content_type": [
+      "main",
+      "experience"
+    ],
+    "codename": "delete_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view experience",
+    "content_type": [
+      "main",
+      "experience"
+    ],
+    "codename": "view_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add profile",
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "codename": "add_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change profile",
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "codename": "change_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete profile",
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "codename": "delete_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view profile",
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "codename": "view_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add project",
+    "content_type": [
+      "main",
+      "project"
+    ],
+    "codename": "add_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change project",
+    "content_type": [
+      "main",
+      "project"
+    ],
+    "codename": "change_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete project",
+    "content_type": [
+      "main",
+      "project"
+    ],
+    "codename": "delete_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view project",
+    "content_type": [
+      "main",
+      "project"
+    ],
+    "codename": "view_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add service",
+    "content_type": [
+      "main",
+      "service"
+    ],
+    "codename": "add_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change service",
+    "content_type": [
+      "main",
+      "service"
+    ],
+    "codename": "change_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete service",
+    "content_type": [
+      "main",
+      "service"
+    ],
+    "codename": "delete_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view service",
+    "content_type": [
+      "main",
+      "service"
+    ],
+    "codename": "view_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add skill",
+    "content_type": [
+      "main",
+      "skill"
+    ],
+    "codename": "add_skill"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change skill",
+    "content_type": [
+      "main",
+      "skill"
+    ],
+    "codename": "change_skill"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete skill",
+    "content_type": [
+      "main",
+      "skill"
+    ],
+    "codename": "delete_skill"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view skill",
+    "content_type": [
+      "main",
+      "skill"
+    ],
+    "codename": "view_skill"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add testimonial",
+    "content_type": [
+      "main",
+      "testimonial"
+    ],
+    "codename": "add_testimonial"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change testimonial",
+    "content_type": [
+      "main",
+      "testimonial"
+    ],
+    "codename": "change_testimonial"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete testimonial",
+    "content_type": [
+      "main",
+      "testimonial"
+    ],
+    "codename": "delete_testimonial"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view testimonial",
+    "content_type": [
+      "main",
+      "testimonial"
+    ],
+    "codename": "view_testimonial"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add social link",
+    "content_type": [
+      "main",
+      "sociallink"
+    ],
+    "codename": "add_sociallink"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change social link",
+    "content_type": [
+      "main",
+      "sociallink"
+    ],
+    "codename": "change_sociallink"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete social link",
+    "content_type": [
+      "main",
+      "sociallink"
+    ],
+    "codename": "delete_sociallink"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view social link",
+    "content_type": [
+      "main",
+      "sociallink"
+    ],
+    "codename": "view_sociallink"
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$BCyolhfNTNudIsxoZaMBBU$pmJ7BxIx/Emecj2qKa4Ei/aEEK8fsI7CS3EQ3AlM0Eo=",
+    "last_login": "2025-09-28T14:43:40.968Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-08-24T15:54:15.375Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-08-24T15:55:50.501Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "object_id": "1",
+    "object_repr": "Test Title",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-08-24T15:56:31.808Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "client"
+    ],
+    "object_id": "1",
+    "object_repr": "Aiogram",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-08-25T09:56:23.932Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "1",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Title\", \"Avatar\", \"Email\", \"Phone\", \"Birthday\", \"Location\", \"About me\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-08-25T09:59:03.209Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "service"
+    ],
+    "object_id": "1",
+    "object_repr": "Vebsaytlar",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-08-25T10:00:22.222Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "service"
+    ],
+    "object_id": "2",
+    "object_repr": "Telegram botlar",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-08-25T10:00:29.121Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "service"
+    ],
+    "object_id": "1",
+    "object_repr": "Vebsaytlar",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Icon url\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-08-25T10:01:17.403Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "service"
+    ],
+    "object_id": "2",
+    "object_repr": "Telegram botlar",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Icon url\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-08-25T10:01:31.385Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "service"
+    ],
+    "object_id": "1",
+    "object_repr": "Vebsaytlar",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Icon url\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-08-25T10:03:46.595Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "testimonial"
+    ],
+    "object_id": "1",
+    "object_repr": "Aziz Nigmatov",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-08-25T10:05:02.009Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "testimonial"
+    ],
+    "object_id": "2",
+    "object_repr": "Jonibek Yorqulov",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-08-25T10:06:21.422Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "testimonial"
+    ],
+    "object_id": "3",
+    "object_repr": "Gulbahor To'xtaboyeva",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-08-25T10:08:15.400Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "client"
+    ],
+    "object_id": "1",
+    "object_repr": "Sardor",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Logo\", \"Logo url\", \"Website\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-08-25T10:08:44.797Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "client"
+    ],
+    "object_id": "2",
+    "object_repr": "Sardor 1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-08-25T10:10:52.134Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "education"
+    ],
+    "object_id": "1",
+    "object_repr": "4 at University school of the arts",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-08-25T10:11:28.225Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "education"
+    ],
+    "object_id": "2",
+    "object_repr": "11 at New York Academy of Art",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-08-25T10:12:27.305Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "education"
+    ],
+    "object_id": "2",
+    "object_repr": "11 at New York Academy of Art",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Order\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-08-25T10:12:27.305Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "education"
+    ],
+    "object_id": "1",
+    "object_repr": "4 at University school of the arts",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Order\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-08-25T10:40:01.522Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "experience"
+    ],
+    "object_id": "1",
+    "object_repr": "Creative director at EPAM",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-08-25T10:40:27.431Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "experience"
+    ],
+    "object_id": "2",
+    "object_repr": "Art director at ICT Academy",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-08-25T10:40:58.030Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "skill"
+    ],
+    "object_id": "1",
+    "object_repr": "Python",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-08-25T10:41:13.045Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "skill"
+    ],
+    "object_id": "2",
+    "object_repr": "Django",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-08-25T10:44:09.971Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "project"
+    ],
+    "object_id": "1",
+    "object_repr": "News Website",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-08-25T10:45:49.086Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "project"
+    ],
+    "object_id": "1",
+    "object_repr": "News Website",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\", \"Image url\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-08-25T10:48:11.876Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "project"
+    ],
+    "object_id": "2",
+    "object_repr": "QUEASY",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-08-25T10:50:25.037Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "object_id": "2",
+    "object_repr": "Bek",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-08-26T11:14:49.731Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "1",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Avatar\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-08-26T11:15:21.635Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "object_id": "1",
+    "object_repr": "Test Title",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-08-26T11:15:31.878Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "object_id": "2",
+    "object_repr": "Bek",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-09-09T06:40:43.014Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "1",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Avatar\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-09-09T06:56:45.183Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "1",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - Telegram\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-09-09T07:18:10.949Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "1",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - Intagram\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2025-09-17T04:19:52.953Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "1",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - Telegram\", \"fields\": [\"Icon class\"]}}, {\"changed\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - Intagram\", \"fields\": [\"Icon class\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2025-09-17T04:23:32.909Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "1",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2025-09-17T04:25:48.852Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "2",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - instagram\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2025-09-17T04:26:37.400Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "2",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Avatar\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2025-09-17T04:28:53.877Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "2",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - telegram\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2025-09-17T04:29:41.542Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "2",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - linkedin\", \"fields\": [\"Name\", \"Icon class\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2025-09-17T04:31:27.882Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "2",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - paper-plane\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2025-09-17T04:32:55.382Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "2",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - send\", \"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2025-09-17T04:33:18.048Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "2",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - send\", \"fields\": [\"Icon class\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2025-09-17T04:33:59.128Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "2",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - instagram\", \"fields\": [\"Icon class\"]}}, {\"changed\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - linkedin\", \"fields\": [\"Icon class\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2025-09-17T04:35:14.492Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "2",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"social link\", \"object\": \"Sardor Safarov - Github\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2025-09-17T04:36:21.355Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "profile"
+    ],
+    "object_id": "2",
+    "object_repr": "Sardor Safarov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2025-09-28T14:46:33.720Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "object_id": "1",
+    "object_repr": "Test Title",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2025-09-28T14:46:33.720Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "object_id": "2",
+    "object_repr": "Bek",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2025-09-28T14:48:39.204Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "object_id": "1",
+    "object_repr": "Demak Re'ja Bunday.",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2025-09-28T14:51:25.023Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "object_id": "2",
+    "object_repr": "Avtomatlashtiring",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2025-09-28T14:52:02.854Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "object_id": "2",
+    "object_repr": "Avtomatlashtiring",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2025-09-28T15:21:35.002Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "main",
+      "blogpost"
+    ],
+    "object_id": "3",
+    "object_repr": "Tilimiz Qadriyatlarimizni Ko'rastadi",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+}
+]

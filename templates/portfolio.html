@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Portfolio - {{ profile.name }}{% endblock %}
+
+{% block content %}
+<article class="portfolio active" data-page="portfolio">
+    <header>
+        <h2 class="h2 article-title">Portfolio</h2>
+    </header>
+
+    <section class="projects">
+        <ul class="project-list">
+            {% for project in projects %}
+            <li class="project-item active" 
+                data-filter-item 
+                data-category="{% if project.category == 'web-design' %}web design{% elif project.category == 'web-development' %}web development{% else %}{{ project.category }}{% endif %}">
+                <a href="{{ project.project_url|default:'#' }}" {% if project.project_url %}target="_blank"{% endif %}>
+                    <figure class="project-img">
+                        <div class="project-item-icon-box">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+
+                        {% if project.image %}
+                            <img src="{{ project.image.url }}" alt="{{ project.title }}" loading="lazy">
+                        {% elif project.image_url %}
+                            <img src="{{ project.image_url }}" alt="{{ project.title }}" loading="lazy">
+                        {% endif %}
+                    </figure>
+
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-category">{{ project.get_category_display }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</article>
+{% endblock %}
