@@ -34,6 +34,105 @@
             </li>
             {% endfor %}
         </ul>
+            <!-- Subscription Card -->
+        <div class="subscription-card">
+            <div class="subscription-content">
+                <a href="https://t.me/python_core_oop" target="_blank" class="subscription-btn">
+                    <ion-icon name="paper-plane-outline"></ion-icon>
+                    <span>Obuna Bo'ling</span>
+                </a>
+                <p class="subscription-note">
+                    Yangi maqola va ochiq manbali loyihalarimni @python_core_oop telegram kanalimda topishingiz mumkin.
+                </p>
+            </div>
+        </div>
     </section>
 </article>
+<style>
+    /* Subscription Card Styles */
+.subscription-card {
+    background: linear-gradient(135deg, var(--onyx) 0%, var(--eerie-black2) 100%);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 50px 0;
+    border: 1px solid var(--jet);
+    box-shadow: var(--shadow2);
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.subscription-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-yellow-crayola), var(--vegas-gold));
+}
+
+.subscription-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--orange-yellow-crayola);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscription-icon ion-icon {
+    font-size: 28px;
+    color: var(--smoky-black);
+}
+
+.subscription-content {
+    flex: 1;
+}
+
+.subscription-title {
+    color: var(--white2);
+    font-size: 1.5rem;
+    font-weight: var(--fw600);
+    margin-bottom: 10px;
+}
+
+.subscription-text {
+    color: var(--light-gray);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.subscription-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--orange-yellow-crayola);
+    color: var(--smoky-black);
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: var(--fw600);
+    text-decoration: none;
+    transition: var(--transition1);
+    margin-bottom: 10px;
+}
+
+.subscription-btn:hover {
+    background: var(--vegas-gold);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow1);
+}
+
+.subscription-note {
+    color: var(--light-gray70);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin: 0;
+}
+</style>
 {% endblock %}
