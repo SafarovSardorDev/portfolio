@@ -41,7 +41,7 @@
             </div>
 
             <div class="blog-content-main">
-                {{ blog.content|urlize|linebreaksbr }}
+                {{ blog.content|safe }}
             </div>
         </div>
 
@@ -208,6 +208,110 @@
 
 .blog-content-main a:hover {
     border-bottom-color: var(--orange-yellow-crayola);
+}
+
+/* Code Block Styles */
+.code-block-wrapper {
+    position: relative;
+    margin: 25px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--eerie-black1);
+    border: 1px solid var(--jet);
+    box-shadow: var(--shadow1);
+}
+
+.code-block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--onyx);
+    border-bottom: 1px solid var(--jet);
+}
+
+.code-language {
+    color: var(--orange-yellow-crayola);
+    font-size: 0.85rem;
+    font-weight: var(--fw600);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.copy-code-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: var(--light-gray);
+    border: 1px solid var(--jet);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: var(--fw500);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-code-btn:hover {
+    background: var(--orange-yellow-crayola);
+    color: var(--smoky-black);
+    border-color: var(--orange-yellow-crayola);
+}
+
+.copy-code-btn.copied {
+    background: transparent;
+    color: var(--light-gray);
+    border-color: var(--jet);
+}
+
+.copy-code-btn.copied span {
+    color: var(--orange-yellow-crayola);
+}
+
+.copy-code-btn ion-icon {
+    font-size: 14px;
+}
+
+.code-block {
+    overflow-x: auto;
+    padding: 16px;
+    background: var(--eerie-black1);
+    max-height: 500px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--jet) transparent;
+}
+
+.code-block::-webkit-scrollbar {
+    height: 8px;
+}
+
+.code-block::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+    background: var(--jet);
+    border-radius: 4px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+    background: var(--light-gray70);
+}
+
+.code-block pre {
+    margin: 0;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre;
+    color: var(--light-gray);
+}
+
+.code-block code {
+    display: block;
+    overflow-x: auto;
+    white-space: pre;
 }
 
 /* Subscription Card Styles */
@@ -809,4 +913,110 @@
     }
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Process code blocks
+    const blogContent = document.querySelector('.blog-content-main');
+    if (blogContent) {
+        // Find all text nodes that contain ``` code blocks
+        const walker = document.createTreeWalker(
+            blogContent,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+        
+        let node;
+        const codeBlocks = [];
+        
+        while (node = walker.nextNode()) {
+            const text = node.textContent;
+            const regex = /```(\w+)?\s*([\s\S]*?)```/g;
+            let match;
+            
+            while ((match = regex.exec(text)) !== null) {
+                codeBlocks.push({
+                    node: node,
+                    match: match,
+                    index: match.index,
+                    language: 'Code', // Always show "Code" instead of language
+                    code: match[2].trim()
+                });
+            }
+        }
+        
+        // Replace code blocks with styled elements
+        codeBlocks.forEach((block, index) => {
+            const parent = block.node.parentNode;
+            const text = block.node.textContent;
+            
+            const beforeText = text.substring(0, block.index);
+            const afterText = text.substring(block.index + block.match[0].length);
+            
+            // Create wrapper for code block
+            const codeWrapper = document.createElement('div');
+            codeWrapper.className = 'code-block-wrapper';
+            codeWrapper.innerHTML = `
+                <div class="code-block-header">
+                    <span class="code-language">${block.language}</span>
+                    <button class="copy-code-btn" data-index="${index}">
+                        <ion-icon name="copy-outline"></ion-icon>
+                        <span>Nusxa olish</span>
+                    </button>
+                </div>
+                <div class="code-block">
+                    <pre><code>${escapeHtml(block.code)}</code></pre>
+                </div>
+            `;
+            
+            // Replace the text node with new elements
+            if (beforeText) {
+                parent.insertBefore(document.createTextNode(beforeText), block.node);
+            }
+            parent.insertBefore(codeWrapper, block.node);
+            if (afterText) {
+                parent.insertBefore(document.createTextNode(afterText), block.node);
+            }
+            
+            // Remove the original text node
+            parent.removeChild(block.node);
+        });
+        
+        // Add copy functionality
+        document.querySelectorAll('.copy-code-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                const codeBlock = codeBlocks[index];
+                
+                if (codeBlock) {
+                    navigator.clipboard.writeText(codeBlock.code).then(() => {
+                        const originalText = this.querySelector('span').textContent;
+                        const originalIcon = this.querySelector('ion-icon').getAttribute('name');
+                        
+                        this.classList.add('copied');
+                        this.querySelector('span').textContent = 'Nusxa olindi!';
+                        this.querySelector('ion-icon').setAttribute('name', 'checkmark-outline');
+                        
+                        setTimeout(() => {
+                            this.classList.remove('copied');
+                            this.querySelector('span').textContent = originalText;
+                            this.querySelector('ion-icon').setAttribute('name', originalIcon);
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
+                }
+            });
+        });
+    }
+    
+    // Helper function to escape HTML
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+});
+</script>
 {% endblock %}
