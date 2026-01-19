@@ -5,4 +5,8 @@ psycopg2-binary==2.9.10
 python-dotenv==1.1.1
 sqlparse==0.5.3
 tzdata==2025.2
+
+#renderga deploy qilish uchun
 gunicorn
+dj-database-url
+
