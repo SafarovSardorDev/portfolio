@@ -141,6 +141,8 @@ load_dotenv(BASE_DIR / ".env")
 # SECURITY
 SECRET_KEY = os.getenv("SECRET_KEY", "unsafe-secret-key")
 DEBUG = os.getenv("DEBUG", "False") == "True"
+
+#renderga deploy qilish uchun
 ALLOWED_HOSTS = ["*"]
 #ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
@@ -186,6 +188,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database (PostgreSQL)
+#renderga deploy qilish uchun
 import os
 import dj_database_url
 
