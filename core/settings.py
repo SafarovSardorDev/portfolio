@@ -143,8 +143,19 @@ SECRET_KEY = os.getenv("SECRET_KEY", "unsafe-secret-key")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 #renderga deploy qilish uchun
-ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ["*"]
 #ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = [
+    "imsafarov.uz",
+    "www.imsafarov.uz",
+    "imsafarov.onrender.com"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://imsafarov.uz",
+    "https://www.imsafarov.uz"
+]
+
 
 # Application definition
 INSTALLED_APPS = [
